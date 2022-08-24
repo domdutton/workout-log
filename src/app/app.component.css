@@ -1,0 +1,49 @@
+/* NAVBAR */
+.navbar {
+    position: relative;  
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 16vh;
+    font-family: sans-serif;
+    background-color: #dddddd;  
+    border-bottom: 2px #6a6a6a solid;
+}
+
+.logo {
+    position: absolute;
+    top: 4vh;
+    left: 4vh;
+
+}
+.logoImg {
+    position: relative;
+    width: 8vh;
+    height: auto;
+}
+
+.logoText {
+    position: absolute;
+    left: 10vh;
+    top: 0vw;
+    font-size: 5vh;
+    color: #444444;
+    font-weight: bold;
+}
+
+
+/*Buttons*/
+
+.btnHome {
+    background-color: #ffffff;
+    border: 1vh #444444;
+    width: 5vw;
+    height: 8vh;
+}
+.btnHomeTxt {
+    
+}
+
+
+
+/* FOOTER */
