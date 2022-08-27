@@ -225,3 +225,109 @@
     font-size: 1.25em;
 
 }
+
+.btnBlogsFt {
+    position: absolute;
+    color: #ffffff;
+    bottom: -5vh;
+    left: 0vw;
+    font-size: 1.25em;
+}
+
+.btnPlansFt {
+    position: absolute;
+    color: #ffffff;
+    bottom: -7.5vh;
+    left: 0vw;
+    font-size: 1.25em;
+}
+.btnAddLogsFt {
+    position: absolute;
+    color: #ffffff;
+    bottom: -10vh;
+    left: 0vw;
+    font-size: 1.25em;
+}
+.btnViewLogsFt {
+    position: absolute;
+    color:#ffffff;
+    bottom: -12.5vh;
+    left: 0vw;
+    font-size: 1.25em;
+}
+
+.btnLoginFt {
+    position: absolute;
+    color:#ffffff;
+    bottom: -15vh;
+    left: 0vw;
+    font-size: 1.25em;
+}
+
+.btnRegisterFt {
+    position: absolute;
+    color:#ffffff;
+    bottom: -17.5vh;
+    left: 0vw;
+    font-size: 1.25em;
+}
+
+.contact {
+    position: absolute;
+    bottom: 15vh;
+    right: 4vw;
+}
+
+.contactTxt {
+    text-decoration: underline;
+    font-size: 4vh;
+    font-family: sans-serif;
+    color: #ffffff;
+
+}
+
+
+.contactImg {
+    right: 10vw;
+}
+
+.contactImg1 {
+    position: absolute;
+    width: 5vh;
+    height: auto;
+    right: 8vh;
+
+}
+.contactImg2 {
+    position: absolute;
+    width: 5vh;
+    height: auto;
+    right: 14vh;
+}
+.contactImg3 {
+    position: absolute;
+    width: 5vh;
+    height: auto;
+    right: 20vh;
+}
+.contactImg4 {
+    position: absolute;
+    width: 5vh;
+    height: auto;
+    right: 26vh;
+}
+
+.btnLoginFt2 {
+    position: absolute;
+    display:inline-block;
+    padding:0.2vh 1.5vh;
+    border:0.1em solid #444444;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#444444;
+    text-align:center;
+    bottom: -10vh;
+} 
