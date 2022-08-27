@@ -33,16 +33,147 @@
 
 
 /*Buttons*/
+.buttons {
+    position: relative;
+    top: 5.5vh;
+    left: 25vw;
 
-.btnHome {
-    background-color: #ffffff;
-    border: 1vh #444444;
-    width: 5vw;
-    height: 8vh;
 }
-.btnHomeTxt {
+
+    .btnHome{
+        position: absolute;
+        display:inline-block;
+        padding:0.2vh 1.5vh;
+        border:0.1em solid #444444;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#444444;
+        text-align:center;
+        }
+    .btnHome:hover{
+        color:#ff6347;
+        background-color:#FFFFFF;
+        }
     
-}
+    
+    .btnBlogs{
+        position: absolute;
+        display:inline-block;
+        padding:0.2vh 1.5vh;
+        border:0.1em solid #444444;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#444444;
+        text-align:center;
+        left:10vw;
+        }
+    .btnBlogs:hover{
+        color:#ff6347;
+        background-color:#FFFFFF;
+        }
+    
+    .btnPlans{
+        position: absolute;
+        display:inline-block;
+        padding:0.2vh 1.5vh;
+        border:0.1em solid #444444;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#444444;
+        text-align:center;
+        left:20vw;
+        }
+    .btnPlans:hover{
+        color:#ff6347;
+        background-color:#FFFFFF;
+        }
+    
+    .btnAddLogs{
+        position: absolute;
+        display:inline-block;
+        padding:0.2vh 1.5vh;
+        border:0.1em solid #444444;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#444444;
+        text-align:center;
+        left: 30vw;
+        }
+    .btnAddLogs:hover{
+        color:#ff6347;
+        background-color:#FFFFFF;
+        }
+    
+    .btnViewLogs{
+        position: absolute;
+        display:inline-block;
+        padding:0.2vh 1.5vh;
+        border:0.1em solid #444444;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#444444;
+        text-align:center;
+        left: 40vw;
+        }
+    .btnViewLogs:hover{
+        color:#ff6347;
+        background-color:#FFFFFF;
+        }
+    
+    .btnLogin{
+        position: absolute;
+        display:inline-block;
+        padding:0.2vh 1.5vh;
+        border:0.1em solid #444444;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#444444;
+        text-align:center;
+        left: 52vw;
+        }
+    .btnlogin:hover{
+        color:#ff6347;
+        background-color:#FFFFFF;
+        }
+    
+    
+    .btnRegister{
+        position: absolute;
+        display:inline-block;
+        padding:0.2vh 1.5vh;
+        border:0.1em solid #444444;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#444444;
+        text-align:center;
+        left: 62vw;
+        }   
+    .btnRegister:hover{
+        color:#ff6347;
+        background-color:#FFFFFF;
+        }
+
 
 
 
