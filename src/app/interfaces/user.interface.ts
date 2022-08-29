@@ -1,6 +1,6 @@
 export interface User {
-    uuid: string;
-    username: string;
-    plans: string[];
-    posts: string[];
-  }
+  id: string;
+  username: string;
+  plans: Array<string>;
+  posts: Array<string>;
+}
