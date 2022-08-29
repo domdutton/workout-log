@@ -1,14 +1,11 @@
-import {
-  AuthGuard,
-  redirectLoggedInTo,
-} from '@angular/fire/auth-guard';
+import { AuthGuard, redirectLoggedInTo } from '@angular/fire/auth-guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
-const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['plans']);
 
 const routes: Routes = [
   {

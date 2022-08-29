@@ -7,11 +7,13 @@ import { HomeComponent } from './components/home/home.component';
 import {
   AuthGuard,
   redirectLoggedInTo,
-  redirectUnauthorizedTo
+  redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
 import { PlanComponent } from './components/plan/plan.component';
+import { ExerciseComponent } from './components/exercise/exercise.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
 
-const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['plans']);
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
@@ -28,15 +30,21 @@ const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'plans/:id/:eid',
+    component: ExerciseComponent,
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
-  }
+  },
+  {
+    path: 'blog',
+    component: BlogsComponent,
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

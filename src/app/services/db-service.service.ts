@@ -6,9 +6,14 @@ import {
   doc,
   updateDoc,
   collection,
-  query
+  query,
 } from '@firebase/firestore';
-import { Firestore, docData, collectionData, QueryConstraint } from '@angular/fire/firestore';
+import {
+  Firestore,
+  docData,
+  collectionData,
+  QueryConstraint,
+} from '@angular/fire/firestore';
 
 import { Injectable } from '@angular/core';
 
@@ -16,9 +21,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class DBService {
-
-  constructor(private readonly firestore: Firestore) {
-  }
+  constructor(private readonly firestore: Firestore) {}
 
   async find<T>(coll: string, key: QueryConstraint) {
     const collectionReference = collection(this.firestore, coll);
@@ -31,12 +34,18 @@ export class DBService {
   }
 
   create<T>(collection: string, item: T) {
-    const documentReference = doc(this.firestore, `${collection}/${(item as any).id}`);
+    const documentReference = doc(
+      this.firestore,
+      `${collection}/${(item as any).id}`
+    );
     return setDoc(documentReference, item);
   }
 
   update<T>(collection: string, item: T) {
-    const documentReference = doc(this.firestore, `${collection}/${(item as any).id}`);
+    const documentReference = doc(
+      this.firestore,
+      `${collection}/${(item as any).id}`
+    );
     return updateDoc(documentReference, { ...item });
   }
 

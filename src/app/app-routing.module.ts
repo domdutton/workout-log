@@ -7,10 +7,10 @@ import { BlogsComponent } from './modules/app/components/blogs/blogs.component';
 import {
   AuthGuard,
   redirectLoggedInTo,
-  redirectUnauthorizedTo
+  redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
 
-const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['plans']);
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
@@ -40,6 +40,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

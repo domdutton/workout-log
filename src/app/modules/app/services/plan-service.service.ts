@@ -7,36 +7,54 @@ import { Auth } from '@angular/fire/auth';
 
 import { DBService } from 'src/app/services/db-service.service';
 
-import { Plan } from 'src/app/interfaces/plan.interface'
+import { Plan } from 'src/app/interfaces/plan.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PlanService {
-  constructor(private readonly auth: Auth, private readonly dbService: DBService) {}
+  constructor(
+    private readonly auth: Auth,
+    private readonly dbService: DBService
+  ) {}
 
   getAllPlans() {
-    return this.dbService.find("Plans", where("author", "==", this.auth.currentUser?.uid))
+    return this.dbService.find(
+      'Plans',
+      where('author', '==', this.auth.currentUser?.uid)
+    );
   }
 
   get(id: string) {
-    return this.dbService.get<Plan>("Plans", id);
+    return this.dbService.get<Plan>('Plans', id);
+  }
+
+  async addLog(plan: Plan, eid: string, date: Date, value: number) {
+    plan.logs.push({ eid, date, value });
+    return this.dbService.update<Plan>('Plans', {
+      ...plan,
+    });
   }
 
   addNewExercises(plan: Plan, eid: Array<string>) {
     plan.exercises = [...new Set(plan.exercises.concat(eid))];
-    return this.dbService.update<Plan>("Plans", {
-      ...plan
-    })
+    return this.dbService.update<Plan>('Plans', {
+      ...plan,
+    });
+  }
+
+  deletePlan(eid: string) {
+    return this.dbService.delete('Plans', eid);
   }
 
   createNewPlan({ title, description }: Plan) {
-    return this.dbService.create<Plan>("Plans", {
+    return this.dbService.create<Plan>('Plans', {
       id: nanoid(),
       author: this.auth.currentUser?.uid!,
       title: title,
       description: description,
-      exercises: []
-    })
+      exercises: [],
+      logs: [],
+    });
   }
 }
