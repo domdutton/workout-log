@@ -1,45 +1,42 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { IndexComponent } from './components/index/index.component';
-import { BlogsComponent } from './modules/app/components/blogs/blogs.component';
+import { PlansComponent } from './components/plans/plans.component';
+import { HomeComponent } from './components/home/home.component';
 
 import {
   AuthGuard,
   redirectLoggedInTo,
   redirectUnauthorizedTo
 } from '@angular/fire/auth-guard';
+import { PlanComponent } from './components/plan/plan.component';
 
 const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
   {
-    path: '',
-    component: IndexComponent,
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectLoggedInToHome },
-  },
-  {
-    path: 'blogs',
-    component: BlogsComponent,
+    path: 'plans',
+    component: PlansComponent,
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
-    path: '',
-    loadChildren: () =>
-      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+    path: 'plans/:id',
+    component: PlanComponent,
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
-    path: '',
-    loadChildren: () =>
-      import('./modules/app/app.module').then((m) => m.AppModule),
-  },
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
