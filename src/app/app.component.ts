@@ -14,16 +14,20 @@ import { DBService } from './services/db-service.service';
 export class AppComponent {
   title = 'fitpal';
   currentYear: number = new Date().getFullYear();
-  pfpUrl: string;
+  showLogout: boolean = false;
 
-  constructor(private router: Router, private auth: Auth, private authService: AuthService, private dbService: DBService) { }
+  constructor(
+    private router: Router,
+    private auth: Auth,
+    private authService: AuthService,
+    private dbService: DBService
+  ) {}
 
-  async ngOnInit(): Promise<void> {
-    //FIXME: This is completly broken...
-    var email: string = this.auth.currentUser ? this.auth.currentUser.email! : "null";
-    var username: string = this.auth.currentUser ? (await this.dbService.get<User>("Users", this.auth.currentUser?.uid!)).id : "john.doe";
-    this.pfpUrl = 
-      `https://www.gravatar.com/avatar/${Md5.hashStr(email)}?d=https://avatars.dicebear.com/api/avataaars/${username}.png`;
+  ngOnInit(): void {
+    this.auth.onAuthStateChanged((state) => {
+      if(state != null) this.showLogout = true;
+      else this.showLogout = false;
+    })
   }
 
   logout() {
