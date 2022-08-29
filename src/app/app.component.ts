@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { Md5 } from 'ts-md5';
-import { User } from './interfaces/user.interface';
 import { AuthService } from './modules/auth/services/auth-service.service';
 import { DBService } from './services/db-service.service';
 
