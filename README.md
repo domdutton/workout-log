@@ -2,6 +2,12 @@
  Welcome to FitPal! A simple website where you can log all of your fitness goals.  You can search through a list of workouts, as well as see a
  demonstration on how that workout is performed. 
  
+ 
+ ## Link
+ 
+ http://fitpal.herokuapp.com/
+ 
+ 
  ## Tech Stack
  
  Angular
